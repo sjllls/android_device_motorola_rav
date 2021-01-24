@@ -8,8 +8,8 @@
 
 set -e
 
-DEVICE_COMMON=pdx201
-VENDOR=sony
+DEVICE_COMMON=rav
+VENDOR=motorola
 
 # Load extract_utils and do some sanity checks
 MY_DIR="${BASH_SOURCE%/*}"

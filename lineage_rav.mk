@@ -24,17 +24,17 @@ $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 # Inherit from common.mk
 $(call inherit-product, $(LOCAL_PATH)/device.mk)
 
-PRODUCT_BRAND := Sony
-PRODUCT_DEVICE := pdx201
-PRODUCT_MANUFACTURER := Sony
-PRODUCT_NAME := lineage_pdx201
-PRODUCT_MODEL := Xperia 10 II
+PRODUCT_BRAND := Motorola
+PRODUCT_DEVICE := rav
+PRODUCT_MANUFACTURER := Motorola
+PRODUCT_NAME := lineage_rav
+PRODUCT_MODEL := motog(8)
 
-PRODUCT_GMS_CLIENTID_BASE := android-sonymobile
+PRODUCT_GMS_CLIENTID_BASE := android-motorola
 
-TARGET_VENDOR_PRODUCT_NAME := pdx201
+TARGET_VENDOR_PRODUCT_NAME := rav
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    PRIVATE_BUILD_DESC="Sony/XQ-AU52/XQ-AU52 10 59.0.A.10.5 059000A010000502956232951 user/release-keys"
+    PRIVATE_BUILD_DESC="motorola rav_reteu/rav 10 QPJS30.63-35-1-15/37df17 user/release-keys"
 
-BUILD_FINGERPRINT := Sony/XQ-AU52/XQ-AU52:10/59.0.A.10.5/059000A010000502956232951:user/release-keys
+BUILD_FINGERPRINT := motorola/rav_reteu/rav:10/QPJS30.63-35-1-15/37df17:user/release-keys

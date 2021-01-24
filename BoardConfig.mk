@@ -14,17 +14,17 @@
 # limitations under the License.
 #
 
-COMMON_PATH := device/sony/pdx201
+COMMON_PATH := device/motorola/rav
 
-BOARD_VENDOR := sony
+BOARD_VENDOR := motorola
 
 TARGET_SPECIFIC_HEADER_PATH := $(COMMON_PATH)/include
 
 BUILD_BROKEN_DUP_RULES := true
 
 # Boot animation
-TARGET_SCREEN_HEIGHT := 2520
-TARGET_SCREEN_WIDTH := 1080
+TARGET_SCREEN_HEIGHT := 1520
+TARGET_SCREEN_WIDTH := 720
 
 # Display
 TARGET_SCREEN_DENSITY := 420
@@ -56,7 +56,7 @@ TARGET_BOARD_PLATFORM_GPU := qcom-adreno610
 
 # Kernel
 BOARD_BOOT_HEADER_VERSION := 2
-BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom androidboot.memcg=1 lpm_levels.sleep_disabled=1 video=vfb:640x400,bpp=32,memsize=3072000 msm_rtb.filter=0x237 service_locator.enable=1 swiotlb=1 loop.max_part=7 cgroup.memory=nokmem,nosocket buildproduct=pdx201 buildid=SEINE-1.0.1-NOVMR2-201117-1552
+BOARD_KERNEL_CMDLINE := console=ttyMSM0,115200,n8 androidboot.hardware=qcom androidboot.console=ttyMSM0 androidboot.memcg=1 lpm_levels.sleep_disabled=1 video=vfb:640x400,bpp=32,memsize=3072000 msm_rtb.filter=0x237 service_locator.enable=1 swiotlb=1 earlycon=msm_geni_serial,0x4a90000 loop.max_part=7 cgroup.memory=nokmem,nosocket androidboot.usbcontroller=4e00000.dwc3 printk.devkmsg=on androidboot.hab.csv=11 androidboot.hab.product=rav androidboot.hab.cid=50 firmware_class.path=/vendor/firmware_mnt/image
 BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_PAGESIZE := 4096
 BOARD_KERNEL_TAGS_OFFSET := 0x00000100
@@ -67,10 +67,10 @@ BOARD_KERNEL_SEPARATED_DTBO := true
 BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION)
 TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_HEADER_ARCH := arm64
-TARGET_KERNEL_SOURCE := kernel/sony/sm6125
+TARGET_KERNEL_SOURCE := kernel/motorola/sm6125
 TARGET_KERNEL_CLANG_COMPILE := true
 
-TARGET_KERNEL_CONFIG := vendor/pdx201_defconfig
+TARGET_KERNEL_CONFIG := vendor/rav_defconfig
 
 # QCOM
 BOARD_USES_QCOM_HARDWARE := true
@@ -83,9 +83,6 @@ TARGET_SYSTEM_PROP += $(COMMON_PATH)/system.prop
 
 # Treble
 BOARD_VNDK_VERSION := current
-
-# ANT+
-BOARD_ANT_WIRELESS_DEVICE := "qualcomm-hidl"
 
 # Audio
 USE_CUSTOM_AUDIO_POLICY := 1
@@ -131,21 +128,21 @@ BOARD_BOOTIMAGE_PARTITION_SIZE := 0x04000000
 BOARD_DTBOIMG_PARTITION_SIZE := 8388608
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 0x04000000
 # Reserve space for data encryption (109553123000-16384)
-BOARD_USERDATAIMAGE_PARTITION_SIZE := 109553106616
+BOARD_USERDATAIMAGE_PARTITION_SIZE := 17850949632
 ifneq ($(WITH_GMS),true)
 BOARD_PRODUCTIMAGE_EXTFS_INODE_COUNT := -1
-BOARD_PRODUCTIMAGE_PARTITION_RESERVED_SIZE := 1258291200
+BOARD_PRODUCTIMAGE_PARTITION_RESERVED_SIZE := 524288000
 BOARD_SYSTEMIMAGE_EXTFS_INODE_COUNT := -1
-BOARD_SYSTEMIMAGE_PARTITION_RESERVED_SIZE := 1258291200
+BOARD_SYSTEMIMAGE_PARTITION_RESERVED_SIZE := 524288000
 endif
 BOARD_PRODUCTIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_SYSTEMIMAGE_FILE_SYSTEM_TYPE := ext4
-BOARD_SOMC_DYNAMIC_PARTITIONS_PARTITION_LIST := product system
+BOARD_QTI_DYNAMIC_PARTITIONS_PARTITION_LIST := product system
 # Dynamic partition size = (Super partition size / 2) - 4MB
-BOARD_SOMC_DYNAMIC_PARTITIONS_SIZE := 6438256640
-BOARD_SUPER_PARTITION_GROUPS := somc_dynamic_partitions
-BOARD_SUPER_PARTITION_SIZE := 12884901888
-BOARD_SUPER_PARTITION_ERROR_LIMIT := 12360613888
+BOARD_QTI_DYNAMIC_PARTITIONS_SIZE := 4458541056
+BOARD_SUPER_PARTITION_GROUPS := qti_dynamic_partitions
+BOARD_SUPER_PARTITION_SIZE := 8925474816
+BOARD_SUPER_PARTITION_ERROR_LIMIT := 8794402816
 BOARD_FLASH_BLOCK_SIZE := 131072 # (BOARD_KERNEL_PAGESIZE * 64)
 TARGET_COPY_OUT_ODM := vendor/odm
 TARGET_COPY_OUT_PRODUCT := product
@@ -181,4 +178,4 @@ BOARD_AVB_VBMETA_SYSTEM_ROLLBACK_INDEX := $(PLATFORM_SECURITY_PATCH_TIMESTAMP)
 BOARD_AVB_VBMETA_SYSTEM_ROLLBACK_INDEX_LOCATION := 1
 
 # Inherit from the proprietary version
--include vendor/sony/pdx201/BoardConfigVendor.mk
+-include vendor/motorola/rav/BoardConfigVendor.mk

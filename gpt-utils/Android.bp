@@ -16,7 +16,7 @@
 
 
 cc_library {
-    name: "libgptutils.sony",
+    name: "libgptutils.moto",
     vendor: true,
     recovery_available: true,
     shared_libs: [

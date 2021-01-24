@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2018 The LineageOS Project
+# Copyright (C) 2021 The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -21,7 +21,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/gsi_keys.mk)
 
 # Get non-open-source specific aspects
-$(call inherit-product, vendor/sony/pdx201/pdx201-vendor.mk)
+$(call inherit-product, vendor/motorola/rav/rav-vendor.mk)
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
@@ -51,8 +51,7 @@ AB_OTA_PARTITIONS += \
     product \
     recovery \
     system \
-    vbmeta \
-    vbmeta_system
+    vbmeta
 
 AB_OTA_POSTINSTALL_CONFIG += \
     RUN_POSTINSTALL_system=true \
@@ -68,10 +67,6 @@ AB_OTA_POSTINSTALL_CONFIG += \
 
 PRODUCT_PACKAGES += \
     otapreopt_script
-
-# ANT+
-PRODUCT_PACKAGES += \
-    AntHalService-Soong
 
 # Audio
 PRODUCT_PACKAGES += \
@@ -120,15 +115,12 @@ PRODUCT_PACKAGES += \
 # HIDL
 PRODUCT_PACKAGES += \
     libhidltransport \
-    libhwbinder \
-
-# HotwordEnrollement app permissions
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/privapp-permissions-hotword.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-hotword.xml
+    libhwbinder
 
 # Input
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/keylayout/gpio-keys.kl:$(TARGET_COPY_OUT_SYSTEM)/usr/keylayout/gpio-keys.kl
+    $(LOCAL_PATH)/keylayout/uinput-egis.kl:$(TARGET_COPY_OUT_SYSTEM)/usr/keylayout/uinput-egis.kl \
+    $(LOCAL_PATH)/keylayout/uinput-fpc.kl:$(TARGET_COPY_OUT_SYSTEM)/usr/keylayout/uinput-fpc.kl
 
 # Livedisplay
 PRODUCT_PACKAGES += \
@@ -157,10 +149,6 @@ PRODUCT_PACKAGES += \
 # Ramdisk
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/etc/fstab.qcom:$(TARGET_COPY_OUT_RAMDISK)/fstab.qcom
-
-# Remove unwanted packages
-PRODUCT_PACKAGES += \
-    RemovePackages
 
 # Soong namespaces
 QCOM_SOONG_NAMESPACE := $(LOCAL_PATH)
@@ -202,6 +190,9 @@ PRODUCT_COPY_FILES += \
 # WiFi
 PRODUCT_PACKAGES += \
     WifiOverlay
+
+PRODUCT_COPY_FILES += \
+	  $(LOCAL_PATH)/wifi/WCNSS_qcom_cfg.ini:$(TARGET_COPY_OUT_PRODUCT)/vendor_overlay/$(PRODUCT_TARGET_VNDK_VERSION)/etc/wifi/WCNSS_qcom_cfg.ini
 
 # WiFi Display
 PRODUCT_PACKAGES += \

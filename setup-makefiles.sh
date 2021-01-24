@@ -8,8 +8,8 @@
 
 set -e
 
-DEVICE_COMMON=pdx201
-VENDOR=sony
+DEVICE_COMMON=rav
+VENDOR=motorola
 
 # Load extract_utils and do some sanity checks
 MY_DIR="${BASH_SOURCE%/*}"
@@ -28,7 +28,7 @@ source "${HELPER}"
 setup_vendor "${DEVICE_COMMON}" "${VENDOR}" "${ANDROID_ROOT}" true
 
 # Warning headers and guards
-write_headers "pdx201"
+write_headers "rav"
 
 # The standard common blobs
 write_makefiles "${MY_DIR}/proprietary-files.txt" true

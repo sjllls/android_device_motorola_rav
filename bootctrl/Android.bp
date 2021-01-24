@@ -17,5 +17,5 @@
 cc_library {
     name: "bootctrl.trinket",
     defaults: ["bootctrl_hal_defaults"],
-    static_libs: ["libgptutils.sony"],
+    static_libs: ["libgptutils.moto"],
 }

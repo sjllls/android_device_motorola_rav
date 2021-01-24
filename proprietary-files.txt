@@ -1,9 +1,7 @@
-# Stock package version: Sony/XQ-AU52/XQ-AU52:10/59.0.A.10.5/059000A010000502956232951:user/release-keys
+# Stock package version: motorola/rav_reteu/rav:10/QPJS30.63-35-1-15/37df17:user/release-keys
 
 # ANT+
--system/lib/libantradio.so
 product/lib64/com.qualcomm.qti.ant@1.0.so
--system/lib64/libantradio.so
 
 # Bluetooth (aptX) - from crosshatch - QP1A.190711.020
 product/lib64/libaptX_encoder.so|df1c89d7af1bb35808d5fe3496b04ba066c10cbc
@@ -39,25 +37,21 @@ product/lib64/vendor.qti.hardware.data.qmi@1.0.so
 product/lib64/libsdm-disp-apis.qti.so
 product/lib64/vendor.display.color@1.0.so
 
-# DPM
-product/bin/dpmd
-product/etc/dpm/dpm.conf
-product/etc/init/dpmd.rc
-product/etc/permissions/com.qti.dpmframework.xml
-product/etc/permissions/dpmapi.xml
-product/framework/com.qti.dpmframework.jar
-product/framework/dpmapi.jar
-product/lib64/com.qualcomm.qti.dpm.api@1.0.so
-product/lib64/libdiag_system.so
-product/lib64/libdpmctmgr.so
-product/lib64/libdpmfdmgr.so
-product/lib64/libdpmframework.so
-product/lib64/libdpmtcm.so
--product/priv-app/dpmserviceapp/dpmserviceapp.apk
-
-# HotwordEnrollment
--product/priv-app/HotwordEnrollmentOKGoogleHEXAGON/HotwordEnrollmentOKGoogleHEXAGON.apk
--product/priv-app/HotwordEnrollmentXGoogleHEXAGON/HotwordEnrollmentXGoogleHEXAGON.apk
+# DPM - from Sony/XQ-AU52/XQ-AU52:10/59.0.A.10.5/059000A010000502956232951:user/release-keys
+product/bin/dpmd|a70053cbaadbfdce93a85da4a9e55b096a75a83a
+product/etc/dpm/dpm.conf|7819ef30cea23b5c163e26f456a570613a33359d
+product/etc/init/dpmd.rc|7f95195a89fddce06b93006a737701270e91f669
+product/etc/permissions/com.qti.dpmframework.xml|4613f8b8629d0b823e6aaab45d399ac30da06c09
+product/etc/permissions/dpmapi.xml|0991b3069308620cfcad53873e9f09af181b981d
+product/framework/com.qti.dpmframework.jar|7adf5e0e96c155acfe66c7256e06e48c1ee35d13
+product/framework/dpmapi.jar|4696df9793ad676b305d53b5d7ce65ecf74771ad
+product/lib64/com.qualcomm.qti.dpm.api@1.0.so|a70cfc1be3e06cde6318d6969e114429fe1950bb
+product/lib64/libdiag_system.so|9ad597b577e39451363135b6e35e93e5950e124f
+product/lib64/libdpmctmgr.so|30edca46d4d0f6ecdb86169bf9839375a77c6d27
+product/lib64/libdpmfdmgr.so|8c852ffa26dac26fd87eab57f4c2f46fff5163fa
+product/lib64/libdpmframework.so|cba7fd9244135d009247bb96b29286949398a7ed
+product/lib64/libdpmtcm.so|cd964bbad1930a8ccd5a878b5a2d8f414a6a75a8
+-product/priv-app/dpmserviceapp/dpmserviceapp.apk|9f7b3b49f0c5f4eee7a09614386e6d924df8ab51
 
 # Media
 system/lib/libmmosal.so
@@ -116,56 +110,56 @@ product/lib64/vendor.qti.imsrtpservice@2.0.so:system_ext/lib64/vendor.qti.imsrtp
 product/lib64/vendor.qti.imsrtpservice@2.1.so:system_ext/lib64/vendor.qti.imsrtpservice@2.1.so
 -product/priv-app/ims/ims.apk:system_ext/priv-app/ims/ims.apk
 
-# Trusted User Interface
-product/lib/vendor.qti.hardware.tui_comm@1.0.so
-product/lib64/vendor.qti.hardware.tui_comm@1.0.so
+# Trusted User Interface - from Sony/XQ-AU52/XQ-AU52:10/59.0.A.10.5/059000A010000502956232951:user/release-keys
+product/lib/vendor.qti.hardware.tui_comm@1.0.so|7cde9bde142b2a2a06128cf7aedf32838e35a990
+product/lib64/vendor.qti.hardware.tui_comm@1.0.so|dc232e873775cb175c2559d2efbdec4500aa1637
 
-# WiFi Display
-bin/wfdservice
-etc/init/wfdservice.rc
--framework/WfdCommon.jar
-lib64/libFileMux.so
-lib64/libmmosal.so
-lib64/libmmparser_lite.so
-lib64/libmmrtpdecoder.so
-lib64/libmmrtpencoder.so
-lib64/libwfdclient.so
-lib64/libwfdcommonutils.so
-lib64/libwfdconfigutils.so
-lib64/libwfdmminterface.so
-lib64/libwfdmmsink.so
-lib64/libwfdnative.so
-lib64/libwfdrtsp.so
-lib64/libwfdsinksm.so
-lib64/libwfdsm.so
-lib64/libwfduibcinterface.so
-lib64/libwfduibcsinkinterface.so
-lib64/libwfduibcsink.so
-lib64/libwfduibcsrcinterface.so
-lib64/libwfduibcsrc.so
-lib/com.qualcomm.qti.wifidisplayhal@1.0.so
-lib/libFileMux.so
-lib/libmmosal.so
-lib/libmmparser_lite.so
-lib/libmmrtpdecoder.so
-lib/libmmrtpencoder.so
-lib/libwfdaac.so
-lib/libwfdavenhancements.so
-lib/libwfdclient.so
-lib/libwfdcommonutils.so
-lib/libwfdconfigutils.so
-lib/libwfdmminterface.so
-lib/libwfdmmsink.so
-lib/libwfdmmsrc_system.so
-lib/libwfdrtsp.so
-lib/libwfdservice.so
-lib/libwfdsinksm.so
-lib/libwfdsm.so
-lib/libwfduibcinterface.so
-lib/libwfduibcsinkinterface.so
-lib/libwfduibcsink.so
-lib/libwfduibcsrcinterface.so
-lib/libwfduibcsrc.so
--priv-app/WfdService/WfdService.apk
-product/lib64/vendor.qti.hardware.wifidisplaysession@1.0.so
-product/lib/vendor.qti.hardware.wifidisplaysession@1.0.so
+# WiFi Display - from Sony/XQ-AU52/XQ-AU52:10/59.0.A.10.5/059000A010000502956232951:user/release-keys
+bin/wfdservice|f820584d81f98a89477433a7dac88cb3928f9382
+etc/init/wfdservice.rc|117d11af28ceda7ecf6009d7dc10ffc6bda25fa5
+-framework/WfdCommon.jar|3c471977738fbd54e78aeea334a1562e58d23298
+lib64/libFileMux.so|7e8328371c9a1cd11c59d866665f35c5c3ab745e
+lib64/libmmosal.so|7ec237415508acd99452cdf489da80ca55778ebd
+lib64/libmmparser_lite.so|1bd43e2c8f57599909e09781edefd9f1bd469279
+lib64/libmmrtpdecoder.so|a2cb4a23b1e8b9799d673e334d0da080451a94ec
+lib64/libmmrtpencoder.so|5a1644be753648fe40298871228a80d35983da9e
+lib64/libwfdclient.so|b62e07444f1a044e06c7e1b9716fc81676ee1007
+lib64/libwfdcommonutils.so|18237ca0629c809bd886a01528b7bd8992805562
+lib64/libwfdconfigutils.so|0ba00599e86e59c8e1ee140b51d04dffd5ea4256
+lib64/libwfdmminterface.so|3adcd42d896c430b75070ce6d070aae8dad189f4
+lib64/libwfdmmsink.so|109a6652c6a90658c822ef901fff64973f359e4c
+lib64/libwfdnative.so|66c1eb58051fa1bae6c8b45ad002710e66ef7d66
+lib64/libwfdrtsp.so|7d1d17c19f3b27e0ad0beff6036e25857ba94d87
+lib64/libwfdsinksm.so|a1d916ab231c42c4d25edd20a95d756333b34700
+lib64/libwfdsm.so|ae1e38e47779d8405dae1bfffa2208df1bba4700
+lib64/libwfduibcinterface.so|aefe6fc4e964d21f53eaeb0eaf59d779ad4c1ce3
+lib64/libwfduibcsinkinterface.so|c48c93990b73f18f27ba112f1df1c89f960044d1
+lib64/libwfduibcsink.so|03f550385ffc5549b510d2240914d53deea7f619
+lib64/libwfduibcsrcinterface.so|00071f08ed1e4aadcfa282749a945f81b0eec0df
+lib64/libwfduibcsrc.so|c98b7750449bdb1bafa6b694ae985d10f6a9e4e1
+lib/com.qualcomm.qti.wifidisplayhal@1.0.so|eb7b1bc3a4bab4cb8418895b8969c3888af4f333
+lib/libFileMux.so|332623c7b9df55c20231506c8a2ce18f4816ed5e
+lib/libmmosal.so|463479ddc94f1dd78baea92c8277a16693761b34
+lib/libmmparser_lite.so|09f25e28db64db9c981fe1f64ec6d82651a5e8b4
+lib/libmmrtpdecoder.so|bd04668a216415d3d493be8906b9867c60cbf07d
+lib/libmmrtpencoder.so|4808692549be5621a79a4e56d5eca5cd5c710e97
+lib/libwfdaac.so|88c8f6d14061a144374db316d74b448c7388fe6d
+lib/libwfdavenhancements.so|e4352fef009f0033f02af5309fb57399891b565e
+lib/libwfdclient.so|d4db62075e76e44b38dc8e78fc31a1f1f65e5a2c
+lib/libwfdcommonutils.so|f7322c4b1c5e43783a94c06e536b38bf0120391c
+lib/libwfdconfigutils.so|12daf8f3cc169fff8a3ec7c7cc4a814d3ab1fc51
+lib/libwfdmminterface.so|55537ccdffe7030170e4b385964084c67bb1f4cd
+lib/libwfdmmsink.so|d48c3909217f4a5c9a8319aef71570913fddb908
+lib/libwfdmmsrc_system.so|66c067fb91ad526cbb2f66cc88166a2e78d3ce4c
+lib/libwfdrtsp.so|4db730829804b27fe7cf3475f5c3233c00797d88
+lib/libwfdservice.so|6658878b18e710092e9bcfe98290ebb919b66ec3
+lib/libwfdsinksm.so|6bf175724841aa6a771fbf0ffa0f9e731f51c341
+lib/libwfdsm.so|a1f0945dcc3cc54681d6cf371c5e90ab05eadda7
+lib/libwfduibcinterface.so|55cda1140438c077c30677f881832e822d9a1066
+lib/libwfduibcsinkinterface.so|45611819ff52382ef7b0dc306da3b5353cd8a852
+lib/libwfduibcsink.so|7e8b44e65f89d94e4109ddabeb7abcc737bcedc5
+lib/libwfduibcsrcinterface.so|f338470e1fc2a7ad5ffd8049ac52dacae6f413b1
+lib/libwfduibcsrc.so|03b44f55a2b415b18b6f12d44992b46530944315
+-priv-app/WfdService/WfdService.apk|cb08b836bd164bd8cd19120f9a349b13c0c6764a
+product/lib64/vendor.qti.hardware.wifidisplaysession@1.0.so|b92bbb5e99d09604191328ef3a7c439367c59896
+product/lib/vendor.qti.hardware.wifidisplaysession@1.0.so|e4ed09177ebf0aba89cba754450fd8428abe104d

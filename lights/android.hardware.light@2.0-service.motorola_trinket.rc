@@ -10,7 +10,7 @@ on boot
     chown system system /sys/class/leds/charging/delay_on
     chmod 660 /sys/class/leds/charging/delay_on
 
-service vendor.light-hal-2-0 /system/bin/hw/android.hardware.light@2.0-service.motorola_trinket
+service vendor.light-hal-2-0 /vendor/bin/hw/android.hardware.light@2.0-service
     interface android.hardware.light@2.0::ILight default
     class hal
     user system

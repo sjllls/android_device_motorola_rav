@@ -108,7 +108,7 @@ product/lib64/vendor.qti.ims.rcsconfig@1.0.so:system_ext/lib64/vendor.qti.ims.rc
 product/lib64/vendor.qti.ims.rcsconfig@1.1.so:system_ext/lib64/vendor.qti.ims.rcsconfig@1.1.so
 product/lib64/vendor.qti.imsrtpservice@2.0.so:system_ext/lib64/vendor.qti.imsrtpservice@2.0.so
 product/lib64/vendor.qti.imsrtpservice@2.1.so:system_ext/lib64/vendor.qti.imsrtpservice@2.1.so
--product/priv-app/ims/ims.apk:system_ext/priv-app/ims/ims.apk
+-product/priv-app/ims/ims.apk:system_ext/priv-app/ims/ims.apk|550a8aeacd90cfe0c789843f0525c1ab86703819
 
 # Trusted User Interface - from Sony/XQ-AU52/XQ-AU52:10/59.0.A.10.5/059000A010000502956232951:user/release-keys
 product/lib/vendor.qti.hardware.tui_comm@1.0.so|7cde9bde142b2a2a06128cf7aedf32838e35a990

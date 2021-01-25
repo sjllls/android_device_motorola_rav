@@ -30,7 +30,7 @@ namespace implementation {
 
 #define LEDS            "/sys/class/leds/"
 
-#define LCD_LED         LEDS "lcd-backlight/"
+#define LCD_LED         "/sys/class/backlight/panel0-backlight/brightness"
 #define CHARGING_LED    LEDS "charging/"
 
 #define BRIGHTNESS      "brightness"

@@ -14,7 +14,9 @@
 /vendor/bin/imsdatadaemon       u:object_r:ims_exec:s0
 
 # Custom HALs
-/system/bin/hw/android\.hardware\.light@2\.0-service\.motorola_trinket    u:object_r:hal_light_default_exec:s0
+/(product|system/product)/vendor_overlay/[0-9]+/bin/hw/android\.hardware\.light@2\.0-service    u:object_r:hal_light_default_exec:s0
+sys/devices/platform/soc/5e00000\.qcom,mdss_mdp/backlight/panel0-backlight(/.*)?                  u:object_r:sysfs_leds:s0
+/sys/devices/platform/soc/1c40000\.qcom,spmi/spmi-0/spmi0-03/1c40000\.qcom,spmi:qcom,pmi632@3:qcom,leds@d000/leds/charging(/.*)?        u:object_r:sysfs_leds:s0
 
 # Vendor overlay
 /(product|system/product)/vendor_overlay/[0-9]+/etc(/.*)?        u:object_r:vendor_configs_file:s0

@@ -17,6 +17,11 @@
 <!-- These resources are around just to allow their values to be customized
      for different hardware and product builds.  Do not translate. -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="config_mainBuiltInDisplayCutout">M -380,0 L -276,0 L -276,68 L -380,68 Z</string>
+    <dimen name="quick_qs_offset_height">71.0px</dimen>
+    <dimen name="status_bar_height">71.0px</dimen>
+    <dimen name="status_bar_height_portrait">71.0px</dimen>
+
     <!-- If this is true, the screen will come on when you unplug usb/power/whatever. -->
     <bool name="config_unplugTurnsOnScreen">true</bool>
 
